@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database Builder</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <section class="row">
+      <section class="column">
+        <h2>Input API Data Here</h2>
+        <form action="/api" method="POST">
+          <input type="text" placeholder="songTitle" name="songName" />
+          <input type="text" placeholder="Album" name="album" />
+          <input type="text" placeholder="TrackNumber" name="track" />
+          <input type="text" placeholder="image" name="image" />
+          <textarea
+            rows="5"
+            cols="40"
+            type="text"
+            placeholder="lyrics"
+            name="lyrics"
+          ></textarea>
+          <button type="submit">SUBMIT NEW</button>
+          <button type="button" id="updateButton">UPDATE EXISTING</button>
+        </form>
+      </section>
+      <section class="column">
+        <h2>Delete API Data Here</h2>
+        <input
+          input
+          type="text"
+          placeholder="name to delete"
+          name="deleteInput"
+          id="deleteInput"
+        /><button id="deleteButton">DELETE</button>
+        <h2>Current Songs</h2>
+        <ul class="songs">
+          <% for(let i=0; i < info.length; i++) {%>
+          <li class="title">
+            <span><%= info[i] %></span>
+          </li>
+          <% } %>
+        </ul>
+      </section>
+    </section>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
