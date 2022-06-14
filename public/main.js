@@ -30,7 +30,7 @@ async function deleteEntry() {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: input.value,
+        songName: input.value,
       }),
     })
     const data = await response.json()
