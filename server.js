@@ -72,7 +72,7 @@ app.put("/updateEntry", (req, res) => {
 
 app.delete("/deleteEntry", (req, res) => {
   db.collection("glassjaw")
-    .deleteOne({ name: req.body.songName })
+    .deleteOne({ songName: req.body.name })
     .then((result) => {
       console.log(result)
       res.json("Entry Deleted")
